@@ -4,12 +4,14 @@
         <title>
             looping computation
         </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
  
 <body>
-    <h1>Sowmya Yalamathi computes</h1>
-
-
+    <h1>Sowmya Yalamarthi computes</h1>
 
 <form>
     <label for="first_value">Enter a number</label> </label>
@@ -18,30 +20,28 @@
     <label for="second_value">Enter a number</label>
     <input type ="number" id="second_value" name="second_value" value=2> <br>
 
-    <input type="button" onclick="permutations()" value="Compute">
+    <input class="btn btn-success btn-lg" type="button" onclick="permutations()" value="Compute">
     
 </form>
 <p id="result"> Result </p>
 
 <form>
-    <label for="plus"> + </label> </label>
-    <input type ="radio" onclick="processRadio()" id="plus" name="plus" value=plus> <br>
-    <label for="minus"> - </label> </label>
-    <input type ="radio" onclick="processRadio()" id="minus" name="minus" value=minus> <br>
-    <label for="times"> * </label> </label>
-    <input type ="radio" onclick="processRadio()" id="times" name="times" value=times> <br>
-    <label for="divide"> / </label> </label>
-    <input type ="radio" onclick="processRadio()" id="divide" name="divide" value=divide> <br>
-
+   
+    <input type ="radio" onclick="processRadio()" id="plus" name="plus" value=plus> 
+    <label for="plus"> + </label><br>
+    <input type ="radio" onclick="processRadio()" id="minus" name="minus" value=minus> 
+    <label for="minus"> - </label> <br>
+    <input type ="radio" onclick="processRadio()" id="times" name="times" value=times> 
+    <label for="times"> * </label><br> 
     
+    <input type ="radio" onclick="processRadio()" id="divide" name="divide" value=divide> 
+    <label for="divide"> / </label> <br>
+
 </form>
-
-
 <p id="result is">Result is </p>
 
 
 <script>
-
 function permutations(){
 
     let first_value = document.getElementById("first_value").value
@@ -53,7 +53,6 @@ function permutations(){
        product=product*i;
    }
    document.getElementById("result").innerHTML=first_value+" permute "+second_value+" is "+product
-
 
 }
 function processRadio()
@@ -68,7 +67,6 @@ function processRadio()
         document.getElementById("result is").innerHTML=third_value*fourth_value
     else if(document.getElementById("divide").checked)
         document.getElementById("result is").innerHTML=third_value/fourth_value
-
 
 }
 </script>
