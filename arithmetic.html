@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            looping computation
+        </title>
+    </head>
+ 
+<body>
+    <h1>Sowmya Yalamathi computes</h1>
+
+
+
+<form>
+    <label for="first_value">Enter a number</label> </label>
+    <input type ="number" id="first_value" name="first_value" value=10> <br>
+
+    <label for="second_value">Enter a number</label>
+    <input type ="number" id="second_value" name="second_value" value=2> <br>
+
+    <input type="button" onclick="permutations()" value="Compute">
+    
+</form>
+<p id="result"> Result </p>
+
+<form>
+    <label for="plus"> + </label> </label>
+    <input type ="radio" onclick="processRadio()" id="plus" name="plus" value=plus> <br>
+    <label for="minus"> - </label> </label>
+    <input type ="radio" onclick="processRadio()" id="minus" name="minus" value=minus> <br>
+    <label for="times"> * </label> </label>
+    <input type ="radio" onclick="processRadio()" id="times" name="times" value=times> <br>
+    <label for="divide"> / </label> </label>
+    <input type ="radio" onclick="processRadio()" id="divide" name="divide" value=divide> <br>
+
+    
+</form>
+
+
+<p id="result is">Result is </p>
+
+
+<script>
+
+function permutations(){
+
+    let first_value = document.getElementById("first_value").value
+    let second_value = document.getElementById("second_value").value
+    let product=1
+    
+   for(i=first_value;i>=(first_value-second_value+1);i--)
+   {
+       product=product*i;
+   }
+   document.getElementById("result").innerHTML=first_value+" permute "+second_value+" is "+product
+
+
+}
+function processRadio()
+{
+    let third_value=parseInt(document.getElementById("first_value").value)
+    let fourth_value=parseInt(document.getElementById("second_value").value)
+    if(document.getElementById("plus").checked)
+        document.getElementById("result is").innerHTML=third_value+fourth_value
+    else if(document.getElementById("minus").checked)
+        document.getElementById("result is").innerHTML=third_value-fourth_value
+    else if(document.getElementById("times").checked)
+        document.getElementById("result is").innerHTML=third_value*fourth_value
+    else if(document.getElementById("divide").checked)
+        document.getElementById("result is").innerHTML=third_value/fourth_value
+
+
+}
+</script>
+
+</body>
+</html> 
